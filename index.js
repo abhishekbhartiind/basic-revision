@@ -6,11 +6,13 @@ const rootElement = document.getElementById('app')
 
 //const myReactElement = React.createElement('h1', {className: 'blue'}, 'PluralSight and React');
 
-const Hello = function(){
-    return React.createElement("h1", {className: 'blue'}, "React Functional Component")
+const Hello = function(props){
+    return React.createElement("h1", {className: 'blue'}, "React Functional Component" +props.time)
 }
 
 
-ReactDOM.render(React.createElement(Hello, {}, null), document.getElementById('app'))
+ReactDOM.render(React.createElement(Hello, {
+    time: new Date().toLocaleDateString()
+}, null), document.getElementById('app'))
 
 //rootElement.appendChild(myElement);
